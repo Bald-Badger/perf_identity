@@ -1,0 +1,82 @@
+{
+	"linux-perf-json-version": 1,
+	"headers": {
+		"header-version": 1,
+		"captured-on": "2022-04-12T10:00:44Z",
+		"data-offset": 440,
+		"data-size": 20136,
+		"feat-offset": 20576,
+		"hostname": "ShuaiBuntu",
+		"os-release": "5.13.0-39-generic",
+		"arch": "x86_64",
+		"cpu-desc": "AMD Ryzen 9 3900X 12-Core Processor",
+		"cpuid": "AuthenticAMD,23,113,0",
+		"nrcpus-online": 24,
+		"nrcpus-avail": 24,
+		"perf-version": "5.13.19",
+		"cmdline": [
+			"/usr/lib/linux-tools-5.13.0-39/perf",
+			"record",
+			"-F",
+			"100",
+			"-e",
+			"{l2_pf_hit_l2}",
+			"sleep",
+			"1"
+		]
+	},
+	"samples": [
+		{
+			"timestamp": 1139961539946,
+			"pid": 11869,
+			"tid": 11869,
+			"comm": "perf-exec",
+			"callchain": [
+				{
+					"ip": "0xffffffffaa6412a7",
+					"symbol": "perf_event_addr_filters_exec",
+					"dso": "[kernel.kallsyms]"
+				}
+			]
+		},
+		{
+			"timestamp": 1139961542386,
+			"pid": 11869,
+			"tid": 11869,
+			"comm": "perf-exec",
+			"callchain": [
+				{
+					"ip": "0xffffffffaa6412a7",
+					"symbol": "perf_event_addr_filters_exec",
+					"dso": "[kernel.kallsyms]"
+				}
+			]
+		},
+		{
+			"timestamp": 1139961543626,
+			"pid": 11869,
+			"tid": 11869,
+			"comm": "perf-exec",
+			"callchain": [
+				{
+					"ip": "0xffffffffaa6427e4",
+					"symbol": "perf_iterate_sb",
+					"dso": "[kernel.kallsyms]"
+				}
+			]
+		},
+		{
+			"timestamp": 1139961562656,
+			"pid": 11869,
+			"tid": 11869,
+			"comm": "sleep",
+			"callchain": [
+				{
+					"ip": "0xffffffffaaa07437",
+					"symbol": "copy_page",
+					"dso": "[kernel.kallsyms]"
+				}
+			]
+		}
+	]
+}

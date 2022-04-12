@@ -1,0 +1,6 @@
+frequent event: bp_l1_tlb_fetch_hit
+rare event: branch-misses
+
+perf data convert --to-json ./temp.json
+
+perf record -F 100 -e '{bp_l1_tlb_fetch_hit}' ./wtf
