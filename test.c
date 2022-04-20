@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	int i = 0;
 	int c;
 
-	n = 42;
+	n = 50;
  
 	printf("%lu\n", Fibonacci(n));
 
