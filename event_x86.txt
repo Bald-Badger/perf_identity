@@ -1,0 +1,716 @@
+  duration_time                                      [Tool event]
+  branch-instructions OR cpu/branch-instructions/    [Kernel PMU event]
+  branch-misses OR cpu/branch-misses/                [Kernel PMU event]
+  bus-cycles OR cpu/bus-cycles/                      [Kernel PMU event]
+  cache-misses OR cpu/cache-misses/                  [Kernel PMU event]
+  cache-references OR cpu/cache-references/          [Kernel PMU event]
+  cpu-cycles OR cpu/cpu-cycles/                      [Kernel PMU event]
+  instructions OR cpu/instructions/                  [Kernel PMU event]
+  mem-loads OR cpu/mem-loads/                        [Kernel PMU event]
+  mem-stores OR cpu/mem-stores/                      [Kernel PMU event]
+  ref-cycles OR cpu/ref-cycles/                      [Kernel PMU event]
+  slots OR cpu/slots/                                [Kernel PMU event]
+  topdown-bad-spec OR cpu/topdown-bad-spec/          [Kernel PMU event]
+  topdown-be-bound OR cpu/topdown-be-bound/          [Kernel PMU event]
+  topdown-fe-bound OR cpu/topdown-fe-bound/          [Kernel PMU event]
+  topdown-retiring OR cpu/topdown-retiring/          [Kernel PMU event]
+  cstate_core/c6-residency/                          [Kernel PMU event]
+  cstate_core/c7-residency/                          [Kernel PMU event]
+  cstate_pkg/c10-residency/                          [Kernel PMU event]
+  cstate_pkg/c2-residency/                           [Kernel PMU event]
+  cstate_pkg/c3-residency/                           [Kernel PMU event]
+  cstate_pkg/c6-residency/                           [Kernel PMU event]
+  cstate_pkg/c7-residency/                           [Kernel PMU event]
+  cstate_pkg/c8-residency/                           [Kernel PMU event]
+  cstate_pkg/c9-residency/                           [Kernel PMU event]
+  i915/actual-frequency/                             [Kernel PMU event]
+  i915/bcs0-busy/                                    [Kernel PMU event]
+  i915/bcs0-sema/                                    [Kernel PMU event]
+  i915/bcs0-wait/                                    [Kernel PMU event]
+  i915/interrupts/                                   [Kernel PMU event]
+  i915/rc6-residency/                                [Kernel PMU event]
+  i915/rcs0-busy/                                    [Kernel PMU event]
+  i915/rcs0-sema/                                    [Kernel PMU event]
+  i915/rcs0-wait/                                    [Kernel PMU event]
+  i915/requested-frequency/                          [Kernel PMU event]
+  i915/software-gt-awake-time/                       [Kernel PMU event]
+  i915/vcs0-busy/                                    [Kernel PMU event]
+  i915/vcs0-sema/                                    [Kernel PMU event]
+  i915/vcs0-wait/                                    [Kernel PMU event]
+  i915/vcs1-busy/                                    [Kernel PMU event]
+  i915/vcs1-sema/                                    [Kernel PMU event]
+  i915/vcs1-wait/                                    [Kernel PMU event]
+  i915/vecs0-busy/                                   [Kernel PMU event]
+  i915/vecs0-sema/                                   [Kernel PMU event]
+  i915/vecs0-wait/                                   [Kernel PMU event]
+  intel_bts//                                        [Kernel PMU event]
+  intel_pt//                                         [Kernel PMU event]
+  msr/aperf/                                         [Kernel PMU event]
+  msr/cpu_thermal_margin/                            [Kernel PMU event]
+  msr/mperf/                                         [Kernel PMU event]
+  msr/pperf/                                         [Kernel PMU event]
+  msr/smi/                                           [Kernel PMU event]
+  msr/tsc/                                           [Kernel PMU event]
+  uncore_clock/clockticks/                           [Kernel PMU event]
+  uncore_imc_free_running_0/data_read/               [Kernel PMU event]
+  uncore_imc_free_running_0/data_total/              [Kernel PMU event]
+  uncore_imc_free_running_0/data_write/              [Kernel PMU event]
+  uncore_imc_free_running_1/data_read/               [Kernel PMU event]
+  uncore_imc_free_running_1/data_total/              [Kernel PMU event]
+  uncore_imc_free_running_1/data_write/              [Kernel PMU event]
+
+cache:
+  l1d.replacement                                   
+       [Counts the number of cache lines replaced in L1 data cache]
+  l1d_pend_miss.fb_full                             
+       [Number of cycles a demand request has waited due to L1D Fill Buffer
+        (FB) unavailablability]
+  l1d_pend_miss.fb_full_periods                     
+       [Number of phases a demand request has waited due to L1D Fill Buffer
+        (FB) unavailablability]
+  l1d_pend_miss.l2_stall                            
+       [Number of cycles a demand request has waited due to L1D due to lack of
+        L2 resources]
+  l1d_pend_miss.pending                             
+       [Number of L1D misses that are outstanding]
+  l1d_pend_miss.pending_cycles                      
+       [Cycles with L1D load Misses outstanding]
+  l2_lines_in.all                                   
+       [L2 cache lines filling L2]
+  l2_rqsts.all_code_rd                              
+       [L2 code requests]
+  l2_rqsts.all_demand_data_rd                       
+       [Demand Data Read requests]
+  l2_rqsts.all_demand_miss                          
+       [Demand requests that miss L2 cache]
+  l2_rqsts.all_demand_references                    
+       [Demand requests to L2 cache]
+  l2_rqsts.all_rfo                                  
+       [RFO requests to L2 cache]
+  l2_rqsts.code_rd_hit                              
+       [L2 cache hits when fetching instructions, code reads]
+  l2_rqsts.code_rd_miss                             
+       [L2 cache misses when fetching instructions]
+  l2_rqsts.demand_data_rd_hit                       
+       [Demand Data Read requests that hit L2 cache]
+  l2_rqsts.demand_data_rd_miss                      
+       [Demand Data Read miss L2, no rejects]
+  l2_rqsts.rfo_hit                                  
+       [RFO requests that hit L2 cache]
+  l2_rqsts.rfo_miss                                 
+       [RFO requests that miss L2 cache]
+  l2_rqsts.swpf_hit                                 
+       [SW prefetch requests that hit L2 cache]
+  l2_rqsts.swpf_miss                                
+       [SW prefetch requests that miss L2 cache]
+  mem_inst_retired.all_loads                        
+       [All retired load instructions Supports address when precise (Precise
+        event)]
+  mem_inst_retired.all_stores                       
+       [All retired store instructions Supports address when precise (Precise
+        event)]
+  mem_inst_retired.lock_loads                       
+       [Retired load instructions with locked access Supports address when
+        precise (Precise event)]
+  mem_inst_retired.split_loads                      
+       [Retired load instructions that split across a cacheline boundary
+        Supports address when precise (Precise event)]
+  mem_inst_retired.split_stores                     
+       [Retired store instructions that split across a cacheline boundary
+        Supports address when precise (Precise event)]
+  mem_inst_retired.stlb_miss_loads                  
+       [Retired load instructions that miss the STLB Supports address when
+        precise (Precise event)]
+  mem_inst_retired.stlb_miss_stores                 
+       [Retired store instructions that miss the STLB Supports address when
+        precise (Precise event)]
+  mem_load_l3_hit_retired.xsnp_hit                  
+       [Retired load instructions whose data sources were L3 and cross-core
+        snoop hits in on-pkg core cache Supports address when precise (Precise
+        event)]
+  mem_load_l3_hit_retired.xsnp_hitm                 
+       [Retired load instructions whose data sources were HitM responses from
+        shared L3 Supports address when precise (Precise event)]
+  mem_load_l3_hit_retired.xsnp_miss                 
+       [Retired load instructions whose data sources were L3 hit and
+        cross-core snoop missed in on-pkg core cache Supports address when
+        precise (Precise event)]
+  mem_load_l3_hit_retired.xsnp_none                 
+       [Retired load instructions whose data sources were hits in L3 without
+        snoops required Supports address when precise (Precise event)]
+  mem_load_retired.fb_hit                           
+       [Number of completed demand load requests that missed the L1, but hit
+        the FB(fill buffer), because a preceding miss to the same cacheline
+        initiated the line to be brought into L1, but data is not yet ready in
+        L1 Supports address when precise (Precise event)]
+  mem_load_retired.l1_hit                           
+       [Retired load instructions with L1 cache hits as data sources Supports
+        address when precise (Precise event)]
+  mem_load_retired.l1_miss                          
+       [Retired load instructions missed L1 cache as data sources Supports
+        address when precise (Precise event)]
+  mem_load_retired.l2_hit                           
+       [Retired load instructions with L2 cache hits as data sources Supports
+        address when precise (Precise event)]
+  mem_load_retired.l2_miss                          
+       [Retired load instructions missed L2 cache as data sources Supports
+        address when precise (Precise event)]
+  mem_load_retired.l3_hit                           
+       [Retired load instructions with L3 cache hits as data sources Supports
+        address when precise (Precise event)]
+  mem_load_retired.l3_miss                          
+       [Retired load instructions missed L3 cache as data sources Supports
+        address when precise (Precise event)]
+  offcore_requests.all_data_rd                      
+       [Demand and prefetch data reads]
+  offcore_requests.all_requests                     
+       [Any memory transaction that reached the SQ]
+  offcore_requests.demand_data_rd                   
+       [Demand Data Read requests sent to uncore]
+  offcore_requests.demand_rfo                       
+       [Demand RFO requests including regular RFOs, locks, ItoM]
+  offcore_requests_outstanding.all_data_rd          
+       [Offcore outstanding cacheable Core Data Read transactions in
+        SuperQueue (SQ), queue to uncore]
+  offcore_requests_outstanding.cycles_with_data_rd  
+       [Cycles when offcore outstanding cacheable Core Data Read transactions
+        are present in SuperQueue (SQ), queue to uncore]
+  offcore_requests_outstanding.cycles_with_demand_rfo
+       [Cycles with offcore outstanding demand rfo reads transactions in
+        SuperQueue (SQ), queue to uncore]
+  sq_misc.sq_full                                   
+       [Cycles the thread is active and superQ cannot take any more entries]
+
+floating point:
+  assists.fp                                        
+       [Counts all microcode FP assists]
+  fp_arith_inst_retired.128b_packed_double          
+       [Number of SSE/AVX computational 128-bit packed double precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 2 computation operations,
+        one for each element. Applies to SSE* and AVX* packed double precision
+        floating-point instructions: ADD SUB HADD HSUB SUBADD MUL DIV MIN MAX
+        SQRT RSQRT14 RCP14 RANGE DPP FM(N)ADD/SUB. DPP and FM(N)ADD/SUB
+        instructions count twice as they perform 2 calculations per element]
+  fp_arith_inst_retired.128b_packed_single          
+       [Number of SSE/AVX computational 128-bit packed single precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 4 computation operations,
+        one for each element. Applies to SSE* and AVX* packed single precision
+        floating-point instructions: ADD SUB MUL DIV MIN MAX RCP14 RSQRT14
+        SQRT DPP FM(N)ADD/SUB. DPP and FM(N)ADD/SUB instructions count twice
+        as they perform 2 calculations per element]
+  fp_arith_inst_retired.256b_packed_double          
+       [Number of SSE/AVX computational 256-bit packed double precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 4 computation operations,
+        one for each element. Applies to SSE* and AVX* packed double precision
+        floating-point instructions: ADD SUB MUL DIV MIN MAX RCP14 RSQRT14
+        RANGE SQRT DPP FM(N)ADD/SUB. DPP and FM(N)ADD/SUB instructions count
+        twice as they perform 2 calculations per element]
+  fp_arith_inst_retired.256b_packed_single          
+       [Number of SSE/AVX computational 256-bit packed single precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 8 computation operations,
+        one for each element. Applies to SSE* and AVX* packed single precision
+        floating-point instructions: ADD SUB MUL DIV MIN MAX RCP14 RSQRT14
+        RANGE SQRT DPP FM(N)ADD/SUB. DPP and FM(N)ADD/SUB instructions count
+        twice as they perform 2 calculations per element]
+  fp_arith_inst_retired.512b_packed_double          
+       [Number of SSE/AVX computational 512-bit packed double precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 16 computation operations,
+        one for each element. Applies to SSE* and AVX* packed double precision
+        floating-point instructions: ADD SUB MUL DIV MIN MAX SQRT RSQRT14
+        RCP14 RANGE FM(N)ADD/SUB. FM(N)ADD/SUB instructions count twice as
+        they perform 2 calculations per element]
+  fp_arith_inst_retired.512b_packed_single          
+       [Number of SSE/AVX computational 512-bit packed double precision
+        floating-point instructions retired; some instructions will count
+        twice as noted below. Each count represents 8 computation operations,
+        one for each element. Applies to SSE* and AVX* packed double precision
+        floating-point instructions: ADD SUB MUL DIV MIN MAX SQRT RSQRT14
+        RCP14 RANGE FM(N)ADD/SUB. FM(N)ADD/SUB instructions count twice as
+        they perform 2 calculations per element]
+  fp_arith_inst_retired.scalar_double               
+       [Number of SSE/AVX computational scalar double precision floating-point
+        instructions retired; some instructions will count twice as noted
+        below. Each count represents 1 computation. Applies to SSE* and AVX*
+        scalar double precision floating-point instructions: ADD SUB MUL DIV
+        MIN MAX RCP14 RSQRT14 RANGE SQRT DPP FM(N)ADD/SUB. DPP and
+        FM(N)ADD/SUB instructions count twice as they perform 2 calculations
+        per element]
+  fp_arith_inst_retired.scalar_single               
+       [Number of SSE/AVX computational scalar single precision floating-point
+        instructions retired; some instructions will count twice as noted
+        below. Each count represents 1 computation. Applies to SSE* and AVX*
+        scalar single precision floating-point instructions: ADD SUB MUL DIV
+        MIN MAX RCP14 RSQRT14 RANGE SQRT DPP FM(N)ADD/SUB. DPP and
+        FM(N)ADD/SUB instructions count twice as they perform 2 calculations
+        per element]
+
+frontend:
+  dsb2mite_switches.penalty_cycles                  
+       [DSB-to-MITE switch true penalty cycles]
+  frontend_retired.dsb_miss                         
+       [Retired Instructions who experienced DSB miss (Precise event)]
+  frontend_retired.itlb_miss                        
+       [Retired Instructions who experienced iTLB true miss (Precise event)]
+  frontend_retired.l1i_miss                         
+       [Retired Instructions who experienced Instruction L1 Cache true miss
+        (Precise event)]
+  frontend_retired.l2_miss                          
+       [Retired Instructions who experienced Instruction L2 Cache true miss
+        (Precise event)]
+  frontend_retired.latency_ge_128                   
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 128 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_16                    
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 16 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_2                     
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 2 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_256                   
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 256 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_2_bubbles_ge_1        
+       [Retired instructions that are fetched after an interval where the
+        front-end had at least 1 bubble-slot for a period of 2 cycles which
+        was not interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_32                    
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 32 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_4                     
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 4 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_512                   
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 512 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_64                    
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 64 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.latency_ge_8                     
+       [Retired instructions that are fetched after an interval where the
+        front-end delivered no uops for a period of 8 cycles which was not
+        interrupted by a back-end stall (Precise event)]
+  frontend_retired.stlb_miss                        
+       [Retired Instructions who experienced STLB (2nd level TLB) true miss
+        (Precise event)]
+  icache_16b.ifdata_stall                           
+       [Cycles where a code fetch is stalled due to L1 instruction cache miss]
+  icache_64b.iftag_hit                              
+       [Instruction fetch tag lookups that hit in the instruction cache (L1I).
+        Counts at 64-byte cache-line granularity]
+  icache_64b.iftag_miss                             
+       [Instruction fetch tag lookups that miss in the instruction cache
+        (L1I). Counts at 64-byte cache-line granularity]
+  icache_64b.iftag_stall                            
+       [Cycles where a code fetch is stalled due to L1 instruction cache tag
+        miss]
+  idq.dsb_cycles_any                                
+       [Cycles Decode Stream Buffer (DSB) is delivering any Uop]
+  idq.dsb_cycles_ok                                 
+       [Cycles DSB is delivering optimal number of Uops]
+  idq.dsb_uops                                      
+       [Uops delivered to Instruction Decode Queue (IDQ) from the Decode
+        Stream Buffer (DSB) path]
+  idq.mite_cycles_any                               
+       [Cycles MITE is delivering any Uop]
+  idq.mite_cycles_ok                                
+       [Cycles MITE is delivering optimal number of Uops]
+  idq.mite_uops                                     
+       [Uops delivered to Instruction Decode Queue (IDQ) from MITE path]
+  idq.ms_cycles_any                                 
+       [Cycles when uops are being delivered to IDQ while MS is busy]
+  idq.ms_switches                                   
+       [Number of switches from DSB or MITE to the MS]
+  idq.ms_uops                                       
+       [Uops delivered to IDQ while MS is busy]
+  idq_uops_not_delivered.core                       
+       [Uops not delivered by IDQ when backend of the machine is not stalled]
+  idq_uops_not_delivered.cycles_0_uops_deliv.core   
+       [Cycles when no uops are not delivered by the IDQ when backend of the
+        machine is not stalled]
+  idq_uops_not_delivered.cycles_fe_was_ok           
+       [Cycles when optimal number of uops was delivered to the back-end when
+        the back-end is not stalled]
+
+memory:
+  cycle_activity.cycles_l3_miss                     
+       [Cycles while L3 cache miss demand load is outstanding]
+  cycle_activity.stalls_l3_miss                     
+       [Execution stalls while L3 cache miss demand load is outstanding]
+  hle_retired.aborted                               
+       [Number of times an HLE execution aborted due to any reasons (multiple
+        categories may count as one)]
+  hle_retired.aborted_events                        
+       [Number of times an HLE execution aborted due to unfriendly events
+        (such as interrupts)]
+  hle_retired.aborted_mem                           
+       [Number of times an HLE execution aborted due to various memory events
+        (e.g., read/write capacity and conflicts)]
+  hle_retired.aborted_unfriendly                    
+       [Number of times an HLE execution aborted due to HLE-unfriendly
+        instructions and certain unfriendly events (such as AD assists etc.)]
+  hle_retired.commit                                
+       [Number of times an HLE execution successfully committed Supports
+        address when precise]
+  hle_retired.start                                 
+       [Number of times an HLE execution started]
+  machine_clears.memory_ordering                    
+       [Number of machine clears due to memory ordering conflicts]
+  mem_trans_retired.load_latency_gt_128             
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 128 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_16              
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 16 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_256             
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 256 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_32              
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 32 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_4               
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 4 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_512             
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 512 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_64              
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 64 cycles (Must be precise)]
+  mem_trans_retired.load_latency_gt_8               
+       [Counts randomly selected loads when the latency from first dispatch to
+        completion is greater than 8 cycles (Must be precise)]
+  offcore_requests.l3_miss_demand_data_rd           
+       [Demand Data Read requests who miss L3 cache]
+  rtm_retired.aborted                               
+       [Number of times an RTM execution aborted Supports address when precise]
+  rtm_retired.aborted_events                        
+       [Number of times an RTM execution aborted due to none of the previous 4
+        categories (e.g. interrupt)]
+  rtm_retired.aborted_mem                           
+       [Number of times an RTM execution aborted due to various memory events
+        (e.g. read/write capacity and conflicts)]
+  rtm_retired.aborted_memtype                       
+       [Number of times an RTM execution aborted due to incompatible memory
+        type]
+  rtm_retired.aborted_unfriendly                    
+       [Number of times an RTM execution aborted due to HLE-unfriendly
+        instructions]
+  rtm_retired.commit                                
+       [Number of times an RTM execution successfully committed]
+  rtm_retired.start                                 
+       [Number of times an RTM execution started]
+  tx_exec.misc2                                     
+       [Counts the number of times a class of instructions that may cause a
+        transactional abort was executed inside a transactional region]
+  tx_exec.misc3                                     
+       [Number of times an instruction execution caused the transactional nest
+        count supported to be exceeded]
+  tx_mem.abort_capacity_write                       
+       [Speculatively counts the number TSX Aborts due to a data capacity
+        limitation for transactional writes]
+  tx_mem.abort_conflict                             
+       [Number of times a transactional abort was signaled due to a data
+        conflict on a transactionally accessed address]
+  tx_mem.abort_hle_elision_buffer_mismatch          
+       [Number of times an HLE transactional execution aborted due to XRELEASE
+        lock not satisfying the address and value requirements in the elision
+        buffer]
+  tx_mem.abort_hle_elision_buffer_not_empty         
+       [Number of times an HLE transactional execution aborted due to
+        NoAllocatedElisionBuffer being non-zero]
+  tx_mem.abort_hle_elision_buffer_unsupported_alignment
+       [Number of times an HLE transactional execution aborted due to an
+        unsupported read alignment from the elision buffer]
+  tx_mem.abort_hle_store_to_elided_lock             
+       [Number of times a HLE transactional region aborted due to a non
+        XRELEASE prefixed instruction writing to an elided lock in the elision
+        buffer]
+  tx_mem.hle_elision_buffer_full                    
+       [Number of times HLE lock could not be elided due to
+        ElisionBufferAvailable being zero]
+
+other:
+  assists.any                                       
+       [Number of occurrences where a microcode assist is invoked by hardware]
+  core_power.lvl0_turbo_license                     
+       [Core cycles where the core was running in a manner where Turbo may be
+        clipped to the Non-AVX turbo schedule]
+  core_power.lvl1_turbo_license                     
+       [Core cycles where the core was running in a manner where Turbo may be
+        clipped to the AVX2 turbo schedule]
+  core_power.lvl2_turbo_license                     
+       [Core cycles where the core was running in a manner where Turbo may be
+        clipped to the AVX512 turbo schedule]
+  sw_prefetch_access.nta                            
+       [Number of PREFETCHNTA instructions executed]
+  sw_prefetch_access.prefetchw                      
+       [Number of PREFETCHW instructions executed]
+  sw_prefetch_access.t0                             
+       [Number of PREFETCHT0 instructions executed]
+  sw_prefetch_access.t1_t2                          
+       [Number of PREFETCHT1 or PREFETCHT2 instructions executed]
+  topdown.backend_bound_slots                       
+       [Issue slots where no uops were being issued due to lack of back end
+        resources]
+  topdown.slots                                     
+       [Counts the number of available slots for an unhalted logical processor]
+  topdown.slots_p                                   
+       [Counts the number of available slots for an unhalted logical processor]
+
+pipeline:
+  arith.divider_active                              
+       [Cycles when divide unit is busy executing divide or square root
+        operations]
+  baclears.any                                      
+       [Counts the total number when the front end is resteered, mainly when
+        the BPU cannot provide a correct prediction and this is corrected by
+        other branch handling mechanisms at the front end]
+  br_inst_retired.all_branches                      
+       [All branch instructions retired (Precise event)]
+  br_inst_retired.cond                              
+       [Conditional branch instructions retired (Precise event)]
+  br_inst_retired.cond_ntaken                       
+       [Not taken branch instructions retired (Precise event)]
+  br_inst_retired.cond_taken                        
+       [Taken conditional branch instructions retired (Precise event)]
+  br_inst_retired.far_branch                        
+       [Far branch instructions retired (Precise event)]
+  br_inst_retired.indirect                          
+       [All indirect branch instructions retired (excluding RETs. TSX aborts
+        are considered indirect branch) (Precise event)]
+  br_inst_retired.near_call                         
+       [Direct and indirect near call instructions retired (Precise event)]
+  br_inst_retired.near_return                       
+       [Return instructions retired (Precise event)]
+  br_inst_retired.near_taken                        
+       [Taken branch instructions retired (Precise event)]
+  br_misp_retired.all_branches                      
+       [All mispredicted branch instructions retired Supports address when
+        precise (Precise event)]
+  br_misp_retired.cond                              
+       [Mispredicted conditional branch instructions retired Supports address
+        when precise (Precise event)]
+  br_misp_retired.cond_taken                        
+       [number of branch instructions retired that were mispredicted and
+        taken. Non PEBS Supports address when precise (Precise event)]
+  br_misp_retired.indirect                          
+       [All miss-predicted indirect branch instructions retired (excluding
+        RETs. TSX aborts is considered indirect branch) Supports address when
+        precise (Precise event)]
+  br_misp_retired.near_taken                        
+       [Number of near branch instructions retired that were mispredicted and
+        taken Supports address when precise (Precise event)]
+  cpu_clk_unhalted.distributed                      
+       [Cycle counts are evenly distributed between active threads in the Core]
+  cpu_clk_unhalted.one_thread_active                
+       [Core crystal clock cycles when this thread is unhalted and the other
+        thread is halted]
+  cpu_clk_unhalted.ref_tsc                          
+       [Reference cycles when the core is not in halt state]
+  cpu_clk_unhalted.ref_xclk                         
+       [Core crystal clock cycles when the thread is unhalted]
+  cpu_clk_unhalted.thread                           
+       [Core cycles when the thread is not in halt state]
+  cpu_clk_unhalted.thread_p                         
+       [Thread cycles when thread is not in halt state]
+  cycle_activity.cycles_l1d_miss                    
+       [Cycles while L1 cache miss demand load is outstanding]
+  cycle_activity.cycles_l2_miss                     
+       [Cycles while L2 cache miss demand load is outstanding]
+  cycle_activity.cycles_mem_any                     
+       [Cycles while memory subsystem has an outstanding load]
+  cycle_activity.stalls_l1d_miss                    
+       [Execution stalls while L1 cache miss demand load is outstanding]
+  cycle_activity.stalls_l2_miss                     
+       [Execution stalls while L2 cache miss demand load is outstanding]
+  cycle_activity.stalls_mem_any                     
+       [Execution stalls while memory subsystem has an outstanding load]
+  cycle_activity.stalls_total                       
+       [Total execution stalls]
+  exe_activity.1_ports_util                         
+       [Cycles total of 1 uop is executed on all ports and Reservation Station
+        was not empty]
+  exe_activity.2_ports_util                         
+       [Cycles total of 2 uops are executed on all ports and Reservation
+        Station was not empty]
+  exe_activity.bound_on_stores                      
+       [Cycles where the Store Buffer was full and no loads caused an
+        execution stall]
+  exe_activity.exe_bound_0_ports                    
+       [Cycles where no uops were executed, the Reservation Station was not
+        empty, the Store Buffer was full and there was no outstanding load]
+  ild_stall.lcp                                     
+       [Stalls caused by changing prefix length of the instruction]
+  inst_retired.any                                  
+       [Number of instructions retired. Fixed Counter - architectural event]
+  inst_retired.any_p                                
+       [Number of instructions retired. General Counter - architectural event]
+  inst_retired.prec_dist                            
+       [Precise instruction retired event with a reduced effect of PEBS shadow
+        in IP distribution (Must be precise)]
+  int_misc.all_recovery_cycles                      
+       [Cycles the Backend cluster is recovering after a miss-speculation or a
+        Store Buffer or Load Buffer drain stall]
+  int_misc.clear_resteer_cycles                     
+       [Counts cycles after recovery from a branch misprediction or machine
+        clear till the first uop is issued from the resteered path]
+  int_misc.recovery_cycles                          
+       [Core cycles the allocator was stalled due to recovery from earlier
+        clear event for this thread]
+  ld_blocks.no_sr                                   
+       [The number of times that split load operations are temporarily blocked
+        because all resources for handling the split accesses are in use]
+  ld_blocks.store_forward                           
+       [Loads blocked by overlapping with store buffer that cannot be
+        forwarded]
+  ld_blocks_partial.address_alias                   
+       [False dependencies in MOB due to partial compare on address]
+  load_hit_prefetch.swpf                            
+       [Counts the number of demand load dispatches that hit L1D fill buffer
+        (FB) allocated for software prefetch]
+  lsd.cycles_active                                 
+       [Cycles Uops delivered by the LSD, but didn't come from the decoder]
+  lsd.cycles_ok                                     
+       [Cycles optimal number of Uops delivered by the LSD, but did not come
+        from the decoder]
+  lsd.uops                                          
+       [Number of Uops delivered by the LSD]
+  machine_clears.count                              
+       [Number of machine clears (nukes) of any type]
+  machine_clears.smc                                
+       [Self-modifying code (SMC) detected]
+  misc_retired.lbr_inserts                          
+       [Increments whenever there is an update to the LBR array]
+  misc_retired.pause_inst                           
+       [Number of retired PAUSE instructions]
+  resource_stalls.sb                                
+       [Cycles stalled due to no store buffers available. (not including
+        draining form sync)]
+  resource_stalls.scoreboard                        
+       [Counts cycles where the pipeline is stalled due to serializing
+        operations]
+  rs_events.empty_cycles                            
+       [Cycles when Reservation Station (RS) is empty for the thread]
+  rs_events.empty_end                               
+       [Counts end of periods where the Reservation Station (RS) was empty]
+  uops_dispatched.port_0                            
+       [Number of uops executed on port 0]
+  uops_dispatched.port_1                            
+       [Number of uops executed on port 1]
+  uops_dispatched.port_2_3                          
+       [Number of uops executed on port 2 and 3]
+  uops_dispatched.port_4_9                          
+       [Number of uops executed on port 4 and 9]
+  uops_dispatched.port_5                            
+       [Number of uops executed on port 5]
+  uops_dispatched.port_6                            
+       [Number of uops executed on port 6]
+  uops_dispatched.port_7_8                          
+       [Number of uops executed on port 7 and 8]
+  uops_executed.core                                
+       [Number of uops executed on the core]
+  uops_executed.core_cycles_ge_1                    
+       [Cycles at least 1 micro-op is executed from any thread on physical
+        core]
+  uops_executed.core_cycles_ge_2                    
+       [Cycles at least 2 micro-op is executed from any thread on physical
+        core]
+  uops_executed.core_cycles_ge_3                    
+       [Cycles at least 3 micro-op is executed from any thread on physical
+        core]
+  uops_executed.core_cycles_ge_4                    
+       [Cycles at least 4 micro-op is executed from any thread on physical
+        core]
+  uops_executed.cycles_ge_1                         
+       [Cycles where at least 1 uop was executed per-thread]
+  uops_executed.cycles_ge_2                         
+       [Cycles where at least 2 uops were executed per-thread]
+  uops_executed.cycles_ge_3                         
+       [Cycles where at least 3 uops were executed per-thread]
+  uops_executed.cycles_ge_4                         
+       [Cycles where at least 4 uops were executed per-thread]
+  uops_executed.stall_cycles                        
+       [Counts number of cycles no uops were dispatched to be executed on this
+        thread]
+  uops_executed.thread                              
+       [Counts the number of uops to be executed per-thread each cycle]
+  uops_executed.x87                                 
+       [Counts the number of x87 uops dispatched]
+  uops_issued.any                                   
+       [Uops that RAT issues to RS]
+  uops_issued.stall_cycles                          
+       [Cycles when RAT does not issue Uops to RS for the thread]
+  uops_retired.slots                                
+       [Retirement slots used]
+  uops_retired.total_cycles                         
+       [Cycles with less than 10 actually retired uops]
+
+virtual memory:
+  dtlb_load_misses.stlb_hit                         
+       [Loads that miss the DTLB and hit the STLB]
+  dtlb_load_misses.walk_active                      
+       [Cycles when at least one PMH is busy with a page walk for a demand
+        load]
+  dtlb_load_misses.walk_completed                   
+       [Load miss in all TLB levels causes a page walk that completes. (All
+        page sizes)]
+  dtlb_load_misses.walk_completed_2m_4m             
+       [Page walks completed due to a demand data load to a 2M/4M page]
+  dtlb_load_misses.walk_completed_4k                
+       [Page walks completed due to a demand data load to a 4K page]
+  dtlb_load_misses.walk_pending                     
+       [Number of page walks outstanding for a demand load in the PMH each
+        cycle]
+  dtlb_store_misses.stlb_hit                        
+       [Stores that miss the DTLB and hit the STLB]
+  dtlb_store_misses.walk_active                     
+       [Cycles when at least one PMH is busy with a page walk for a store]
+  dtlb_store_misses.walk_completed                  
+       [Store misses in all TLB levels causes a page walk that completes. (All
+        page sizes)]
+  dtlb_store_misses.walk_completed_2m_4m            
+       [Page walks completed due to a demand data store to a 2M/4M page]
+  dtlb_store_misses.walk_completed_4k               
+       [Page walks completed due to a demand data store to a 4K page]
+  dtlb_store_misses.walk_pending                    
+       [Number of page walks outstanding for a store in the PMH each cycle]
+  itlb.itlb_flush                                   
+       [Flushing of the Instruction TLB (ITLB) pages, includes 4k/2M/4M pages]
+  itlb_misses.stlb_hit                              
+       [Instruction fetch requests that miss the ITLB and hit the STLB]
+  itlb_misses.walk_active                           
+       [Cycles when at least one PMH is busy with a page walk for code
+        (instruction fetch) request]
+  itlb_misses.walk_completed                        
+       [Code miss in all TLB levels causes a page walk that completes. (All
+        page sizes)]
+  itlb_misses.walk_completed_2m_4m                  
+       [Code miss in all TLB levels causes a page walk that completes. (2M/4M)]
+  itlb_misses.walk_completed_4k                     
+       [Code miss in all TLB levels causes a page walk that completes. (4K)]
+  itlb_misses.walk_pending                          
+       [Number of page walks outstanding for an outstanding code request in
+        the PMH each cycle]
+  tlb_flush.dtlb_thread                             
+       [DTLB flush attempts of the thread-specific entries]
+  tlb_flush.stlb_any                                
+       [STLB flush attempts]
+  rNNN                                               [Raw hardware event descriptor]
+  cpu/t1=v1[,t2=v2,t3 ...]/modifier                  [Raw hardware event descriptor]
+  mem:<addr>[/len][:access]                          [Hardware breakpoint]
+
+Metric Groups:
+
