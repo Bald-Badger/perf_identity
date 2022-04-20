@@ -1,5 +1,5 @@
 all:
-	gcc ./test.c -o wtf
+	gcc ./test.c -o wtf.elf
 
 clean:
-	rm -f ./wtf *.log *.old *.data
+	rm -f *.elf *.log *.old *.data
