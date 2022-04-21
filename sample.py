@@ -1,8 +1,8 @@
 import argparse
 
-from regex import E
-
 if __name__ == '__main__':
+	event_list_x86_amd = ['']
+
 	parser = argparse.ArgumentParser(description='sample hardware counters')
 
 	parser.add_argument(
