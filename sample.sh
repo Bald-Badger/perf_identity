@@ -16,7 +16,7 @@
 # branch-instructions
 # 
 
-perf record -c 1000 -a -e l2_cache_hits_from_dc_misses,branch-misses -- sleep 3
+perf record -F 10000 -a -e l2_cache_hits_from_dc_misses,l2_cache_hits_from_ic_misses,uops_retired,ex_ret_brn_ind_misp -- sleep 3
 perf script > ./temp.log
 # perf script --header > ./script.log
 # perf record -e L1-dcache-load-misses -c 10000 -ag -- sleep 5

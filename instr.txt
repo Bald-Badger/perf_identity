@@ -1,3 +1,5 @@
 perf data convert --to-json ./temp.json
 
 perf record -F 100 -e '{bp_l1_tlb_fetch_hit}' ./wtf
+
+sudo perf script record -a -F 10000 -e l2_cache_hits_from_dc_misses,l2_cache_hits_from_ic_misses,uops_retired,ex_ret_brn_ind_misp,ex_ret_fus_brnch_inst,ex_ret_mmx_fp_instr.mmx_instr,ex_ret_mmx_fp_instr.sse_instr,fp_ret_sse_avx_ops.all,ls_int_taken -- sleep 5
