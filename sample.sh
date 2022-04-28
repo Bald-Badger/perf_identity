@@ -21,3 +21,5 @@ perf script > ./temp.log
 # perf script --header > ./script.log
 # perf record -e L1-dcache-load-misses -c 10000 -ag -- sleep 5
 # perf record -e L1-dcache-load-misses -F 10000 -ag -- sleep 5
+
+branch-misses dtlb_load_misses.stlb_hit lsd.uops l2_rqsts.code_rd_miss

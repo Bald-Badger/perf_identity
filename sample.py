@@ -1,6 +1,7 @@
 import argparse
 import csv
 import os
+from time import time
 
 
 def init_parser():
@@ -19,7 +20,6 @@ def init_parser():
 		'-t', 
 		type=int, 
 		required=False,
-		default=3, 
 		help="time to take samples"
 	)
 
@@ -64,11 +64,15 @@ def get_data (args):
 		event_str += ','
 	event_str = event_str[:-1] # remove last comma
 
+	time_str = ''
+	if args.time is not None:
+		time_str = str(args.time)
+
 	record_cmd = "sudo perf script record -a -F {sample_freq} -e {event_list} -- {program} {time}".format(
 			sample_freq=str(args.sample_freq),
 			event_list=event_str,
 			program=args.program,
-			time=args.time
+			time=time_str
 		).strip()
 	print(record_cmd)
 	os.system(record_cmd)
