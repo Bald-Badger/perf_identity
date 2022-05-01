@@ -7,3 +7,5 @@ sudo perf script record -a -F 10000 -e l2_cache_hits_from_dc_misses,l2_cache_hit
 x86:
 cache-misses,branch-misses,L1-dcache-load-misses,L1-icache-load-misses,dTLB-load-misses,dTLB-store-misses,instructions
 python ./sample.py -t 10 -f 20000 -e cache-misses,branch-misses,L1-dcache-load-misses,L1-icache-load-misses,dTLB-load-misses,dTLB-store-misses,instructions -o ./test.csv
+
+python ./sample.py -t 10 -f 20000 -e cache-misses,branch-misses,L1-dcache-load-misses,L1-icache-load-misses,dTLB-load-misses,iTLB-load-misses,instructions -o ./test.csv
